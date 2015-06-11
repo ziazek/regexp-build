@@ -78,6 +78,12 @@ num = Regexp.build(0..1_000_000)
 test "-1", num
 ```
 
+**Enhancements**
+
+Add a `#to_re` method to Range that splits the range into manageable portions of 100..999, 1000...9999, etc. and the remaining that cannot be neatly fit into those ranges to be matched differently.
+
+Say we have 80..10020. The above ranges would leave 80..99 and 10000..10020 unmatched.
+
 ## License
 
 This code is released under the [MIT License](http://www.opensource.org/licenses/MIT)
