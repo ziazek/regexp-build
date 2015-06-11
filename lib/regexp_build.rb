@@ -7,7 +7,6 @@ class Regexp
     raise ArgumentError, "Too few arguments" if args.length < 1
     matchers = []
     args.each do |arg|
-      # binding.pry
       raise ArgumentError, "Invalid argument" unless (arg.respond_to?(:to_int) || arg.instance_of?(Range))
       if arg.respond_to?(:to_int)
         matchers << arg
